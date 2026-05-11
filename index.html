@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial scale=1.0" />
+        <title>Happy Mother's Day, Mom💞🌺💖</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body class="min-h-screen flex flex-col items-center justify-center p-4 relative">
+
+         <!-- STAGE 1: The Envelope -->
+        <div id="stage-envelope" class="envelope-wrap fade-in-up flex flex-col items-center gap-8">
+          <h1 class="text-5xl md:text-6xl handwritten text-rose-100 text-center">
+             A little something for you, Mom...
+        </h1>
+
+        <div id="envelope" class="envelope cursor-pointer" onclick="openEnvelope()">
+            <div class="envelope-flap"></div>
+            <div class="letter handwritten text-2xl text-rose-500">
+                Click me✨💖
+            </div>
+            <div class="envelope-pocket"></div>
+            <div class="wax-seal">M</div>
+        </div>
+
+        <p class="handwritten text-xl text-rose-200/70">tap the envelope</p>
+         </div>
+
+         <!-- STAGE 2: The Flip Card -->
+        <div id="stage-card" class="hidden-stage flex-col items-center gap-6">
+
+            <p class="handwritten text-2xl text-rose-100">tap the card to open it</p>
+
+        <div id="flipCard" class="flip-card cursor-pointer" onclick="flipCard()">
+            <div class="flip-card-inner">
+
+             <!-- FRONT of card -->
+            <div class="flip-front scalloped p-10 flex flex-col items-center justify-center text-center">
+                <div class="text-6xl mb-4">🌸</div>
+                <h2 class="text-5xl text-rose-500 mb-3 italic">Happy</h2> 
+                <h2 class="handwritten text-7xl text-rose-600 mb-3">Mother's Day</h2>
+                <div class="w-24 h-px bg-rose-300 my-4"></div>
+                <p class="text-xl italix text-stone-600">to the best mom in the world</p>
+                <div class="text-4xl mt-6">💐</div>
+             </div>
+
+              <!-- BACK of card -->
+               <div class="flip-back scalloped p-8 flex flex-col gap-4 overflow-y-auto">
+                <h3 class="handwritten text-4xl text-rose-500 text-center">Mom,</h3>
+
+            <!-- EDIT YOUR MESSAGE HERE -->
+             <p class="text-lg leading-relaxed text-stone-700 italic">
+                Thank you for everything you do for me. I am so greatful that out of 
+                the infinite amount of galaxies and planets that are out there
+                 we are here on earth and out of the eight billion people on this planet you are my mom. 
+                 I love you so much that the word love is not enough. Thank you for loving me unconditonally 
+                 and being the one person in the infinite amount of universes we have that its you and your love 
+                 who shaped the way I am. I hope today is an amazing day and every other day is filled with joy. 
+                 Words cannot describe how much of a good person you are. God really took his time to create you because 
+                 you are a masterpeice.
+                 I love you Mom  
+            </p>
+
+             <!-- SWAP THESE PLACEHOLDER PHOTOS FOR REAL ONES -->
+                <p class="handwritten text-xl text-rose-400 text-center mt-2">
+              ↓ scroll through some of my favorites ↓
+            </p> 
+
+            <div class="gallery">
+                <div class="photo" style="background-image: url('assets/Mom1.JPG');"></div>
+                <div class="photo" style="background-image: url('assets/Mom2.jpeg');"></div>
+                <div class="photo" style="background-image: url('assets/Mom3.JPG');"></div>
+                <div class="photo" style="background-image: url('assets/Mom4.jpg');"></div>
+                <div class="photo" style="background-image: url('assets/Mom5.jpg');"></div>
+                <div class="photo" style="background-image: url('assets/Mom6.jpg');"></div>
+                <div class="photo" style="background-image: url('assets/Mom7.jpg');"></div>
+            </div>
+
+            <p class="text-xs text-stone-400 text-center mt-2">
+                tap the card again to flip back
+            </p>
+        </div>
+
+
+        </div>
+        </div>
+        </div>
+
+         <!-- Floating hearts background -->
+    <div id="hearts"></div>
+
+    <script src="script.js"></script>
+    
+    </body>
+    <body> 
+
+    </body>
+</html>
