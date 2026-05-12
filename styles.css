@@ -1,0 +1,126 @@
+/* The page background and base font */
+body {
+    font-family: 'Coromorant Garamond', serif;
+    background:
+        radial-gradient(circle at 20% 20%, #b08698 0%, transparent 55%),
+        radial-gradient(circle at 80% 70%, #8a4a5e 0%, transparent 55%),
+        #ff93b9;
+     color: #56121e;
+     overflow-x: hidden;
+}
+
+/* A helper class so we can use the handwriting font wherever we want */
+.handwritten {
+    font-family: 'Indie Flower', cursive;
+}
+
+/* Step 2 floating hearts */
+
+.heart {
+    position: fixed;
+    color: #f5e1d8;
+    opacity: 0.45;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.4; }
+    90% { opacity: 0.4; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+/* Step 3: The envelope */
+
+.envelope-wrap {
+    perspective: 1500px;
+    --env-w: 300px;
+}
+
+.envelope {
+    position: relative;
+    width: var(--env-w);
+    height: calc(var(--env-w) * 0.684);
+    background: linear-gradient(135deg, #f9d6d2, #e8a4a0);
+    box-shadow: 0 25px 50px -12px rgba(232, 164, 160, 0.5);
+    border-radius: 4px;
+
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: calc(var(--env-w) / 2) solid transparent;
+    border-right: calc(var(--env-w) / 2) solid transparent;
+    border-top: calc(var(--env-w) * 0.342) solid #e8a4a0;
+    transform-origin: top;
+    transition: transform 0.8s ease-in-out;
+    z-index: 3;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope-pocket {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f9d6d2, #e8a4a0);
+    z-index: 4;
+    clip-path: polygon(0 50%, 50% 100%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.wax-seal {
+    position: absolute;
+    top: calc(var(--env-w) * 0.237);
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(var(--env-w) * 0.158);
+    height: calc(var(--env-w) * 0.158);
+    background: radial-gradient(circle at 30% 30%, #c44, #7a1f1f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fce7e3;
+    font-family: 'Coromorant Garamond', serif;
+    font-style: italic;
+    font-size: calc(var(--env-w) * 0.074);
+    box-shadow: inset -2px -2px 6px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    transition: opacity 0.4s;
+    
+}
+
+.envelope.open .wax-seal {
+    opacity: 0;
+}
+
+.letter {
+    position: absolute;
+    top: calc(var(--env-w) * 0.079);
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    background: #fdf6ec;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0,1);
+    z-index: 2;
+    transition: transform 1s ease-in-out 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.envelope.open .letter {
+    transform: translateX(-50%) translateY(calc(var(--env-w) * -0.474));
+}
