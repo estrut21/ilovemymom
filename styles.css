@@ -124,3 +124,112 @@ body {
 .envelope.open .letter {
     transform: translateX(-50%) translateY(calc(var(--env-w) * -0.474));
 }
+
+/* Step 4: The flip card */
+
+.flip-card {
+    perspective: 2000px;
+    width: min(92vw, 500px);
+    height: 650px;
+}
+
+@media (min-width: 768px) {
+    .flip-card { width: 560px; height: 720px;}
+}
+
+@media (min-width: 1024px) {
+    .flip-card { width: 620px; height: 780px; }
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(74, 56, 56, 0.25);
+    overflow: hidden;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+}
+
+.scalloped {
+    background:
+        radial-gradient(circle at 10px 0, transparent 8px, #fdf6ec 9px) 0 0/20px 20px repeat-x,
+        radial-gradient(circle at 10px 100%, transparent 8px, #fdf6ec 9px) 0 100%/20px 20px repeat-x,
+        #fdf6ec;
+}
+
+/* Step 5: Photo gallery */
+
+.gallery {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 8px 4px;
+    scrollbar-width: thin;
+}
+
+.gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+    background: #e8a4a0;
+    border-radius: 3px;
+}
+
+.photo {
+    flex: 0 0 auto;
+    width: 140px;
+    height: 180px;
+    scroll-snap-align: center;
+    background-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+    background-size: cover;
+    background-position: center;
+    transform: rotate(-2deg);
+}
+
+.photo:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* Step 6: visibility and entrance animations */
+
+.hidden-stage {
+    display: none;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out both;
+}
