@@ -130,11 +130,11 @@ body {
 .flip-card {
     perspective: 2000px;
     width: min(92vw, 500px);
-    height: 650px;
+    height: min(85vh, 650px);
 }
 
 @media (min-width: 768px) {
-    .flip-card { width: 560px; height: 720px;}
+    .flip-card { width: 560px; height: 720px; }
 }
 
 @media (min-width: 1024px) {
