@@ -2,10 +2,10 @@
 body {
     font-family: 'Coromorant Garamond', serif;
     background:
-        radial-gradient(circle at 20% 20%, #b08698 0%, transparent 55%),
-        radial-gradient(circle at 80% 70%, #8a4a5e 0%, transparent 55%),
+        radial-gradient(circle at 20% 20%, #fe91b4 0%, transparent 55%),
+        radial-gradient(circle at 80% 70%, #fe91b4 0%, transparent 55%),
         #ff93b9;
-     color: #56121e;
+     color: #ff899f;
      overflow-x: hidden;
 }
 
